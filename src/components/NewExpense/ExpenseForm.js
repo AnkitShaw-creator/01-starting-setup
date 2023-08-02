@@ -22,7 +22,7 @@ export default function ExpenseForm(props) {
 
     const formSubmitHandler = (event) => { 
         event.preventDefault();
-
+        
         const expenseData = {
             title: newTitle,
             amount: newAmount,
@@ -53,11 +53,12 @@ export default function ExpenseForm(props) {
                 </div>
                 <div className='new-expense__control'>
                     <label>Expense Date</label>
-                    <input type='date' min='1990-01-01' value={newDate} onChange={dateChangeHandler}/>
+                    <input type='date' min='2019-01-01' max='2022-12-31' value={newDate} onChange={dateChangeHandler}/>
                 </div>
                 
             </div>
             <div className='new-expense__actions'>
+                <button type='button' onClick={props.onCancel}>Cancel</button>
                 <button type='submit'>Add expense</button>
             </div>
         </form>
